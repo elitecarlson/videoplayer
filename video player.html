@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::-webkit-media-controls {
+            display:none !important;
+        }
+        .video{
+            width: 100%;
+        }
+        .video-player{
+            max-width: 69%;
+            padding-left: 1.5%;
+            position: relative;
+            overflow: hidden;
+        }
+        .popupimg{
+            position: absolute;
+            background-color:white;
+            background-image: url(play-popup.png);
+            border-radius: 100%;
+            width: 64px;
+            height: 64px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .controls{
+            display: flex;
+            visibility: hidden;
+            position: absolute;
+            justify-content: space-between;
+            z-index: 2147483648;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.075), rgba(255, 255, 255, 0));
+        }
+        .fixedcontrols{
+            display: flex;
+            visibility: visible;
+            position: absolute;
+            justify-content: space-between;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.075), rgba(255, 255, 255, 0));
+        }
+        .video-player:hover .controls{
+            visibility: visible;
+        }
+        .bottom{
+            position: absolute;
+            bottom: 0;
+            width: 95%;
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+        .space{
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            bottom: 0;
+            width: 100%;
+        }
+        .realcontrols{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .left{
+            display: flex;
+            align-items: center;
+            bottom: 0;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+        }
+        .progressbar{
+            width: 100%;
+            height: 3px;
+        }
+        .play{
+            background-image: url(play.png);
+            height: 24px;
+            width: 24px;
+            margin-right: 4px;
+        }
+        .play:hover{
+            cursor: pointer;
+        }
+        .pause{
+            background-image: url(pause.png);
+            height: 24px;
+            width: 24px;
+            margin-right: 4px;
+        }
+        .pause:hover{
+            cursor: pointer;
+        }
+        .replay{
+            background-image: url(replay.png);
+            height: 24px;
+            width: 24px;
+            margin-right: 4px;
+        }
+        .replay:hover{
+            cursor: pointer;
+        }  
+        .muted{
+            background-image: url(volume.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .muted:hover{
+            cursor: pointer;
+        }
+        .loop{
+            background-image: url(loop.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .loop:hover{
+            cursor: pointer;
+        }
+        .looping{
+            background-image: url(looping.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .looping:hover{
+            cursor: pointer;
+        }
+        .unmuted{
+            background-image: url(mute.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .unmuted:hover{
+            cursor: pointer;
+        }
+        .fullscreen{
+            background-image: url(fullscreen.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 14px;
+        }
+        .fullscreen:hover{
+            cursor: pointer;
+        }
+        .pip{
+            background-image: url(pip.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .pip:hover{
+            cursor: pointer;
+        }
+        .exitpip{
+            background-image: url(exitpip.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .exitpip:hover{
+            cursor: pointer;
+        }
+        /*.cast{
+            background-image: url(cast.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .cast:hover{
+            cursor: pointer;
+        }
+        .casting{
+            background-image: url(casting.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .casting:hover{
+            cursor: pointer;
+        }*/
+        .rewind{
+            background-image: url(rewind.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .rewind:hover{
+            cursor: pointer;
+        }
+        .fastforward{
+            background-image: url(fast-forward.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .fastforward:hover{
+            cursor: pointer;
+        }
+        .time {
+            display: flex;
+            align-items: center;
+            margin-left: 14px;
+            margin-right: 4px;
+        }
+        .time p{
+            font-family: sans-serif;
+            font-size: 15px;
+            color: white;
+        }        
+    </style>
+</head>
+<body>
+
+    <div class="video-player">   
+    <div class="popupimg"></div>            
+        <video src="mt.mp4" class="video"></video><br>
+        <div class="fixedcontrols">
+            <div class="bottom">
+            <input type="range" name="" id="" class="progressbar" value="0">
+            <div class="space">
+            <div class="left">
+                <div class="play"></div>
+                <div class="muted"></div>
+                <div class="loop"></div>
+                <!--<div class="rewind"></div>
+                <div class="fastforward"></div>-->
+                <div class="time">
+                    <p class="currenttime">0:00 </p>
+                    <p> / </p>
+                    <p class="duration"> 0:00</p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="pip"></div>
+                <!--<div class="cast"></div>-->
+                <div class="fullscreen"></div>
+            </div>
+            </div> 
+            </div>             
+        </div>
+        
+    </div>
+    <script>
+        const video = document.querySelector('.video');
+        const pause_play = document.querySelector('.play');
+        const sound = document.querySelector('.muted');
+        const elapsedtime = document.querySelector('.currenttime');
+        const video_duration = document.querySelector('.duration');
+        const fullscreen = document.querySelector('.fullscreen');
+        const pipbtn = document.querySelector('.pip');
+        const rewind = document.querySelector('.rewind');
+        const fastforward = document.querySelector('.fastforward');
+        const controls = document.querySelector('.fixedcontrols');
+        const bottom = document.querySelector('.bottom');
+        const progressbar = document.querySelector('.progressbar');
+        const loop = document.querySelector('.loop');
+
+        function play_pause(){
+           if (video.paused) {
+               video.play();
+               controls.className = 'controls';
+               pause_play.className = 'pause';
+           }else{
+               video.pause();
+               controls.className = 'fixedcontrols';
+               pause_play.className = 'play';   
+           }
+        }
+        
+        function replay(){               
+            if (video.currentTime === video.duration) {
+                pause_play.className = 'replay';
+                controls.className = 'fixedcontrols';
+            }
+        }
+
+        function mute_unmute(){
+            if (video.muted == false) {
+                video.muted = true;
+                sound.className = 'unmuted';
+            } else {
+                video.muted = false;
+                sound.className = 'muted';
+            }
+        }
+
+        function toggleFullscreen() {
+              
+            if (video.exitFullscreen) {
+                video.exitFullscreen();
+            } else if (video.webkitExitFullscreen) {
+                video.webkitExitFullscreen();
+            } else if (video.msExitFullscreen) {
+                video.msExitFullscreen();
+            }                
+ 
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+
+        }
+
+        function pip(){
+            if (video == document.pictureInPictureElement) {
+                document.exitPictureInPicture();
+                pipbtn.className = 'pip';  
+            } else {
+                video.requestPictureInPicture();
+                pipbtn.className = 'exitpip';
+                if (controls.className = 'controls') {
+                controls.className = 'fixedcontrols';
+            }
+
+            }      
+        }
+        function video_time(){
+            var minutes = Math.floor(video.duration / 60);
+            var seconds = Math.round(video.duration % 60);
+            if (seconds < 10) {
+                seconds = "0"+seconds;
+            }
+            var duration = minutes+":"+seconds;
+            video_duration.innerHTML = duration;
+        }
+        
+        function video_timepassed(){
+            var videotime = video.currentTime;
+            var elapsed_min = Math.floor(videotime/60);
+            var elapsed_sec = Math.floor(videotime%60);
+            if (elapsed_sec < 10) {
+                elapsed_sec = "0"+elapsed_sec;
+            }
+            elapsed_video_time = elapsed_min+":"+elapsed_sec;
+            elapsedtime.innerText = elapsed_video_time;
+        }
+        
+        function rewindvideo(){
+            video.currentTime -= 5;
+        }
+
+        function fastforwardvideo(){
+            video.currentTime += 5;
+        }
+        
+        function progress_seek(){
+            video.currentTime = progressbar.value;
+            progressbar.max = Math.floor(video.duration);
+        }
+        
+        function progressbar_move(){
+            progressbar.value = video.currentTime;
+            progressbar.max = Math.floor(video.duration);           
+        }
+        
+        function loopvideo(){
+            if (video.loop==false) {
+                video.loop=true;
+                loop.className = 'looping';
+            } else {
+                video.loop=false;
+                loop.className = 'loop';
+            }
+        }
+        
+
+        function keypressed(){
+            if (event.code === 'Space') {
+                play_pause();
+            } else if (event.code === 'KeyM') {
+                mute_unmute();
+            } else if (event.code === 'KeyF') {
+                toggleFullscreen();
+            } else if (event.code === 'KeyI') {
+                pip();
+            } else if(event.code === 'KeyL') {
+                loopvideo();
+            } else if (event.code === 'ArrowLeft') {
+                rewindvideo();
+            } else if(event.code === 'ArrowRight') {
+                fastforwardvideo();
+            }
+        }
+        
+        
+        video.addEventListener('click', play_pause);
+        video.addEventListener('dblclick', toggleFullscreen);
+        video.addEventListener('loadedmetadata', video_time);
+        video.addEventListener('timeupdate', video_timepassed);
+        video.addEventListener('timeupdate', replay);
+        video.addEventListener('timeupdate',progressbar_move);
+        //video.addEventListener('timeupdate', loopvid);
+        pause_play.addEventListener('click', play_pause);
+        sound.addEventListener('click', mute_unmute);
+        fullscreen.addEventListener('click', toggleFullscreen);
+        pipbtn.addEventListener('click', pip);
+        //rewind.addEventListener('click', rewindvideo);
+        //fastforward.addEventListener('click', fastforwardvideo);
+        controls.addEventListener('click', play_pause);
+        controls.addEventListener('dblclick', toggleFullscreen);
+        bottom.addEventListener('click', play_pause);
+        bottom.addEventListener('dblclick', play_pause);
+        progressbar.addEventListener('input', progress_seek);
+        loop.addEventListener('click', loopvideo);
+        document.addEventListener('keyup', keypressed);
+    </script>
+</body>
+</html>
