@@ -1,0 +1,234 @@
+/*css code for the video player*/
+        :root{
+            --popup: url(../icons/play-popup.png);
+            --color: white;
+        }
+        ::-webkit-media-controls {
+            display:none !important;
+        }
+        .video{
+            width: 100%;
+        }
+        .video-player{
+            max-width: 69%;
+            padding-left: 1.5%;
+            position: relative;
+            overflow: hidden;
+        }
+        .popup{
+            position: absolute;
+            background-color: var(--color);
+            background-image: var(--popup);
+            border-radius: 100%;
+            width: 64px;
+            height: 64px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .controls{
+            display: flex;
+            visibility: hidden;
+            position: absolute;
+            justify-content: space-between;
+            z-index: 2147483648;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.075), rgba(255, 255, 255, 0));
+        }
+        .fixedcontrols{
+            display: flex;
+            visibility: visible;
+            position: absolute;
+            justify-content: space-between;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.075), rgba(255, 255, 255, 0));
+        }
+        .video-player:hover .controls{
+            visibility: visible;
+        }
+        .bottom{
+            position: absolute;
+            bottom: 0;
+            width: 95%;
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+        .space{
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            bottom: 0;
+            width: 100%;
+        }
+        .realcontrols{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .left{
+            display: flex;
+            align-items: center;
+            bottom: 0;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+        }
+        .progressbar{
+            width: 100%;
+            height: 3px;
+        }
+        .play{
+            background-image: url(../icons/play.png);
+            height: 24px;
+            width: 24px;
+            margin-right: 4px;
+        }
+        .play:hover{
+            cursor: pointer;
+        }
+        .pause{
+            background-image: url(../icons/pause.png);
+            height: 24px;
+            width: 24px;
+            margin-right: 4px;
+        }
+        .pause:hover{
+            cursor: pointer;
+        }
+        .replay{
+            background-image: url(../icons/replay.png);
+            height: 24px;
+            width: 24px;
+            margin-right: 4px;
+        }
+        .replay:hover{
+            cursor: pointer;
+        }  
+        .muted{
+            background-image: url(../icons/volume.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .muted:hover{
+            cursor: pointer;
+        }
+        .loop{
+            background-image: url(../icons/loop.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .loop:hover{
+            cursor: pointer;
+        }
+        .looping{
+            background-image: url(../icons/looping.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .looping:hover{
+            cursor: pointer;
+        }
+        .unmuted{
+            background-image: url(../icons/mute.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 10px;
+            margin-right: 4px;
+        }
+        .unmuted:hover{
+            cursor: pointer;
+        }
+        .fullscreen{
+            background-image: url(../icons/fullscreen.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 14px;
+        }
+        .fullscreen:hover{
+            cursor: pointer;
+        }
+        .pip{
+            background-image: url(../icons/pip.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .pip:hover{
+            cursor: pointer;
+        }
+        .exitpip{
+            background-image: url(../icons/exitpip.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .exitpip:hover{
+            cursor: pointer;
+        }
+        /*.cast{
+            background-image: url(../icons/cast.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .cast:hover{
+            cursor: pointer;
+        }
+        .casting{
+            background-image: url(../icons/casting.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .casting:hover{
+            cursor: pointer;
+        }*/
+        .rewind{
+            background-image: url(../icons/rewind.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .rewind:hover{
+            cursor: pointer;
+        }
+        .fastforward{
+            background-image: url(../icons/fast-forward.png);
+            height: 24px;
+            width: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .fastforward:hover{
+            cursor: pointer;
+        }
+        .time {
+            display: flex;
+            align-items: center;
+            margin-left: 14px;
+            margin-right: 4px;
+        }
+        .time p{
+            font-family: sans-serif;
+            font-size: 15px;
+            color: white;
+        }        
