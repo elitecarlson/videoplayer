@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root{
+            --popup: url(play-popup.png);
+            --color: white;
+        }
         ::-webkit-media-controls {
             display:none !important;
         }
@@ -18,10 +22,10 @@
             position: relative;
             overflow: hidden;
         }
-        .popupimg{
+        .popup{
             position: absolute;
-            background-color:white;
-            background-image: url(play-popup.png);
+            background-color: var(--color);
+            background-image: var(--popup);
             border-radius: 100%;
             width: 64px;
             height: 64px;
@@ -238,9 +242,8 @@
     </style>
 </head>
 <body>
-    <!--hello world-->
     <div class="video-player">   
-    <div class="popupimg"></div>            
+    <div class="popup"></div>            
         <video src="mt.mp4" class="video"></video><br>
         <div class="fixedcontrols">
             <div class="bottom">
@@ -283,15 +286,21 @@
         const progressbar = document.querySelector('.progressbar');
         const loop = document.querySelector('.loop');
 
+
         function play_pause(){
            if (video.paused) {
                video.play();
                controls.className = 'controls';
                pause_play.className = 'pause';
+               document.documentElement.style.setProperty('--popup', 'url(transparent.png)');
+               document.documentElement.style.setProperty('--color', 'none');
+
            }else{
                video.pause();
                controls.className = 'fixedcontrols';
-               pause_play.className = 'play';   
+               pause_play.className = 'play'; 
+               document.documentElement.style.setProperty('--popup', 'url(play-popup.png)');
+               document.documentElement.style.setProperty('--color', 'white');
            }
         }
         
@@ -299,6 +308,10 @@
             if (video.currentTime === video.duration) {
                 pause_play.className = 'replay';
                 controls.className = 'fixedcontrols';
+                document.documentElement.style.setProperty('--popup', 'url(replay-popup.png)');
+                document.documentElement.style.setProperty('--color', 'white');
+
+
             }
         }
 
@@ -406,13 +419,16 @@
                 pip();
             } else if(event.code === 'KeyL') {
                 loopvideo();
-            } else if (event.code === 'ArrowLeft') {
-                rewindvideo();
-            } else if(event.code === 'ArrowRight') {
-                fastforwardvideo();
             }
         }
         
+        function keypressedforlong(){
+            if (event.code === "ArrowLeft") {
+                rewindvideo();
+            } else if (event.code === 'ArrowRight') {
+                fastforwardvideo();
+            }
+        }
         
         video.addEventListener('click', play_pause);
         video.addEventListener('dblclick', toggleFullscreen);
@@ -434,6 +450,7 @@
         progressbar.addEventListener('input', progress_seek);
         loop.addEventListener('click', loopvideo);
         document.addEventListener('keyup', keypressed);
+        document.addEventListener('keydown', keypressedforlong);
     </script>
 </body>
 </html>
