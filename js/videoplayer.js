@@ -1,4 +1,5 @@
 //video player script
+        const videocont = document.querySelector('.video-player');
         const video = document.querySelector('.video');
         const pause_play = document.querySelector('.play');
         const sound = document.querySelector('.muted');
@@ -54,20 +55,20 @@
 
         function toggleFullscreen() {
               
-            if (video.exitFullscreen) {
-                video.exitFullscreen();
-            } else if (video.webkitExitFullscreen) {
-                video.webkitExitFullscreen();
-            } else if (video.msExitFullscreen) {
-                video.msExitFullscreen();
+            if (videocont.exitFullscreen) {
+                videocont.exitFullscreen();
+            } else if (videocont.webkitExitFullscreen) {
+                videocont.webkitExitFullscreen();
+            } else if (videocont.msExitFullscreen) {
+                videocont.msExitFullscreen();
             }                
  
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
-                video.msRequestFullscreen();
+            if (videocont.requestFullscreen) {
+                videocont.requestFullscreen();
+            } else if (videocont.webkitRequestFullscreen) {
+                videocont.webkitRequestFullscreen();
+            } else if (videocont.msRequestFullscreen) {
+                videocont.msRequestFullscreen();
             }
 
         }
