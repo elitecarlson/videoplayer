@@ -5,7 +5,7 @@
         const sound = document.querySelector('.muted');
         const elapsedtime = document.querySelector('.currenttime');
         const video_duration = document.querySelector('.duration');
-        const fullscreen = document.querySelector('.fullscreen');
+        //const fullscreen = document.querySelector('.fullscreen');
         const pipbtn = document.querySelector('.pip');
         const rewind = document.querySelector('.rewind');
         const fastforward = document.querySelector('.fastforward');
@@ -53,7 +53,7 @@
             }
         }
 
-        function toggleFullscreen() {
+        /*function toggleFullscreen() {
               
             if (videocont.exitFullscreen) {
                 videocont.exitFullscreen();
@@ -71,7 +71,7 @@
                 videocont.msRequestFullscreen();
             }
 
-        }
+        }*/
 
         function pip(){
             if (video == document.pictureInPictureElement) {
@@ -159,7 +159,7 @@
         }
         
         video.addEventListener('click', play_pause);
-        video.addEventListener('dblclick', toggleFullscreen);
+        //video.addEventListener('dblclick', toggleFullscreen);
         video.addEventListener('loadedmetadata', video_time);
         video.addEventListener('timeupdate', video_timepassed);
         video.addEventListener('timeupdate', replay);
@@ -167,12 +167,12 @@
         //video.addEventListener('timeupdate', loopvid);
         pause_play.addEventListener('click', play_pause);
         sound.addEventListener('click', mute_unmute);
-        fullscreen.addEventListener('click', toggleFullscreen);
+        //fullscreen.addEventListener('click', toggleFullscreen);
         pipbtn.addEventListener('click', pip);
         //rewind.addEventListener('click', rewindvideo);
         //fastforward.addEventListener('click', fastforwardvideo);
         controls.addEventListener('click', play_pause);
-        controls.addEventListener('dblclick', toggleFullscreen);
+        //controls.addEventListener('dblclick', toggleFullscreen);
         bottom.addEventListener('click', play_pause);
         bottom.addEventListener('dblclick', play_pause);
         progressbar.addEventListener('input', progress_seek);
