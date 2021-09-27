@@ -10,7 +10,8 @@
   width: 100%;
 }
 .video-player {
-  max-width: 59%;
+  margin-left: 120px;
+  max-width: 55%;
   padding-left: 1.5%;
   position: relative;
   overflow: hidden;

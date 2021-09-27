@@ -1,6 +1,52 @@
 /*css code for the header*/
+* {
+  padding: 0;
+  margin: 0;
+}
 .header {
-  background-color: red;
+  background-color: white;
   width: 100%;
-  height: 5%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  padding-left: 71px;
+  padding-right: 165px;
+}
+.searchbar {
+  width: 635px;
+  background-color: #f5f5f5;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c9c9c9;
+}
+.search {
+  width: 542px;
+  height: 6px;
+  margin: 0;
+  padding: 15px;
+  font-size: 18px;
+  border-width: 1px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-color: #c9c9c9;
+  border-top-color: white;
+  border-bottom-color: white;
+  border-left-color: white;
+}
+.search:active {
+  border-color: red;
+}
+.submit {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding-left: 15px;
+}
+.searchlogo {
 }
