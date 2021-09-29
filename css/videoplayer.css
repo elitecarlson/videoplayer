@@ -39,6 +39,7 @@
   bottom: 0;
   width: 100%;
   height: 50%;
+  margin-bottom: 5px;
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.507),
@@ -54,6 +55,7 @@
   bottom: 0;
   width: 100%;
   height: 50%;
+  margin-bottom: 5px;
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.507),
@@ -70,11 +72,13 @@
   width: 95%;
   padding-left: 14px;
   padding-right: 14px;
+  padding-bottom: 10px;
 }
 .space {
   display: flex;
   position: relative;
   justify-content: space-between;
+  padding-top: 10px;
   bottom: 0;
   width: 100%;
 }
