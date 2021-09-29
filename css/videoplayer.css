@@ -17,7 +17,7 @@
   overflow: hidden;
   padding: 0%;
 }
-.popup {
+/*.popup {
   position: absolute;
   background-color: var(--color);
   background-image: var(--popup);
@@ -29,7 +29,7 @@
   left: 0;
   right: 0;
   margin: auto;
-}
+}*/
 .controls {
   display: flex;
   visibility: hidden;

@@ -20,15 +20,15 @@
                video.play();
                controls.className = 'controls';
                pause_play.className = 'pause';
-               document.documentElement.style.setProperty('--popup', 'url(../icons/transparent.png)');
-               document.documentElement.style.setProperty('--color', 'none');
+               //document.documentElement.style.setProperty('--popup', 'url(../icons/transparent.png)');
+               //document.documentElement.style.setProperty('--color', 'none');
 
            }else{
                video.pause();
                controls.className = 'fixedcontrols';
                pause_play.className = 'play'; 
-               document.documentElement.style.setProperty('--popup', 'url(../icons/play-popup.png)');
-               document.documentElement.style.setProperty('--color', 'white');
+               //document.documentElement.style.setProperty('--popup', 'url(../icons/play-popup.png)');
+               //document.documentElement.style.setProperty('--color', 'white');
            }
         }
         
