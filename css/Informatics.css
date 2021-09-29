@@ -1,0 +1,16 @@
+.songnamediv {
+  padding-top: 20px;
+  width: 55%;
+  margin-left: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+.songname {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.iconsright {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+}
