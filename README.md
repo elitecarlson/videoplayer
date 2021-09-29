@@ -1,5 +1,6 @@
 # videoplayer
-Youtube clone with blue logo and similar features but just for me to use at school
-as there is no internet access at school
+This is a video player i made to be using at school
+Please do not commit without first notifying me
 
+Yes i know it's not responsive
 Elite Carlson
