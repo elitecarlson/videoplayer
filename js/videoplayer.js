@@ -13,6 +13,7 @@
         const bottom = document.querySelector('.bottom');
         const progressbar = document.querySelector('.progressbar');
         const loop = document.querySelector('.loop');
+        const searchbar = document.querySelector('.search');
 
 
         function play_pause(){
@@ -137,6 +138,7 @@
         
 
         function keypressed(){
+            if (searchbar !== document.activeElement) {
             if (event.code === 'Space') {
                 play_pause();
             } else if (event.code === 'KeyM') {
@@ -147,7 +149,9 @@
                 pip();
             } else if(event.code === 'KeyL') {
                 loopvideo();
+            }                
             }
+
         }
         
         function keypressedforlong(){
