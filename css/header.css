@@ -36,8 +36,8 @@
   border-bottom-color: white;
   border-left-color: white;
 }
-.search:active {
-  border-color: red;
+.search:focus {
+  outline: none;
 }
 .submit {
   background: none;
@@ -47,4 +47,43 @@
   cursor: pointer;
   outline: inherit;
   padding-left: 15px;
+}
+.upload {
+  height: 38px;
+  width: 120px;
+  border-radius: 100px;
+  margin-left: 18%;
+  border: none;
+  background-color: #00a2e8;
+  color: white;
+}
+.upload:hover {
+  cursor: pointer;
+}
+.like {
+  background-image: url(../icons/like.png);
+  height: 24px;
+  width: 24px;
+  margin-right: 4px;
+}
+.like:hover {
+  cursor: pointer;
+}
+.playlist {
+  background-image: url(../icons/add-to-playlist.png);
+  height: 24px;
+  width: 24px;
+  margin-right: 4px;
+}
+.playlist:hover {
+  cursor: pointer;
+}
+.menu {
+  background-image: url(../icons/menu.png);
+  height: 24px;
+  width: 24px;
+  margin-right: 4px;
+}
+.menu:hover {
+  cursor: pointer;
 }

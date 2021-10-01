@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/videoplayer.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/Informatics.css">
+    <link rel="stylesheet" href="css/popups.css">
     <title>Document</title>
 </head>
 <body style="background-color: #f7f5f5;">
@@ -20,6 +21,7 @@
                 <img src="icons/search.png" class="searchlogo">
               </button>
         </form>
+        <button class="upload">Upload</button>
     </div><br>
 
      <!--Video Player-->  
@@ -57,16 +59,25 @@
          <p class="songname">Meghan Trainor - Me Too</p>
          <div>
              <div class="iconsright">
-                <img src="icons/like.png">
-                <img src="icons/add-to-playlist.png">
-                <img src="icons/menu.png" alt="">
+                <div class="like"></div>
+                <div class="playlist"></div>
+                <div class="menu"></div>
              </div>
-            
          </div>
-
+     </div>
+     <div class="popup">
+     <div class="addvideo">
+         <form action="">
+             <input type="text" class="vidtitle" placeholder="Title"><br>
+             <input type="file" name="" id=""><br>
+             <input type="submit" name="" id=""><br>
+         </form>
+     </div>         
      </div>
 
+
     <script src="js/videoplayer.js"></script>
+    <script src="js/popup.js"></script>
 </body>
 </html>
 <!--https://github.com/Elite-Carlson-->

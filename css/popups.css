@@ -1,13 +1,34 @@
-popup {
-  position: fixed;
-  display: none;
+:root {
+  --visiblity: none;
+  --zindex: -1;
+}
+.popup {
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1000000;
+  background-color: none;
+  z-index: var(--zindex);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addvideo {
+  padding: 10px;
+  background-color: white;
+  display: var(--visiblity);
+  position: relative;
+  z-index: 2;
+}
+.vidtitle {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: black;
+}
+.vidtitle:focus {
+  outline: none;
 }
