@@ -88,7 +88,7 @@
         <div class="addvideo">
             <div class="cancel"></div>
             <form action="">
-                <input type="text" class="vidtitle" placeholder="Title"><br>
+                <input type="text" class="vidtitle" placeholder="Title" value=""><br>
                 <div class="droparea">
                     <div class="uploadimg"></div>
                 </div>

@@ -5,6 +5,7 @@ const addvideo = document.querySelector(".upload");
 const cancelpopup = document.querySelector(".cancel");
 const dropvid = document.querySelector(".droparea");
 const selectfile = document.querySelector(".uploadimg");
+const videotitle = document.querySelector(".vidtitle");
 
 function upload(){
     if (1==1) {
@@ -15,6 +16,7 @@ function upload(){
 
     }
 }
+
 function closepopup(){
     document.documentElement.style.setProperty('--visiblity', 'none');
     document.documentElement.style.setProperty('--zindex', '-1');
@@ -22,19 +24,30 @@ function closepopup(){
     document.documentElement.style.setProperty('--borderstyle', 'dotted');
     selectfile.className = "uploadimg";    
 }
+
 function dragoverarea(){
-    console.log("Its working");  
+    event.preventDefault();    
     document.documentElement.style.setProperty('--borderstyle', 'dashed'); 
-    event.preventDefault();
 }
+
 function dragleavearea(){
     document.documentElement.style.setProperty('--borderstyle', 'dotted'); 
 }
+
 function dropvideo(){
+    event.preventDefault();
+    var droppedvideo = event.dataTransfer.files[0];
+    var name = droppedvideo.name;
+    var actualname = name.split('.');   
+    if (actualname[1] !== "mp4") {
+        alert("Pleas Upload a video")
+    }else{     
     document.documentElement.style.setProperty('--borderstyle', 'solid'); 
     selectfile.className = "successimg";
-    event.preventDefault();
+    videotitle.value = actualname[0]; 
+    }
 }
+
 addvideo.addEventListener('click', upload);
 cancelpopup.addEventListener('click', closepopup);
 dropvid.addEventListener('dragover', dragoverarea);
