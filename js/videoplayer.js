@@ -139,22 +139,17 @@
         
 
         function keypressed(){
-            if (searchbar&&vidtitle !== document.activeElement) {
             if (event.code === 'Space') {
                 play_pause();
             } else if (event.code === 'KeyM') {
                 mute_unmute();
-            } else if (event.code === 'KeyF') {
-                toggleFullscreen();
             } else if (event.code === 'KeyI') {
                 pip();
             } else if(event.code === 'KeyL') {
                 loopvideo();
             }                
-            }
-
         }
-        
+        console.log("69");
         function keypressedforlong(){
             if (event.code === "ArrowLeft") {
                 rewindvideo();
@@ -162,7 +157,7 @@
                 fastforwardvideo();
             }
         }
-        
+
         video.addEventListener('click', play_pause);
         //video.addEventListener('dblclick', toggleFullscreen);
         video.addEventListener('loadedmetadata', video_time);
@@ -184,3 +179,6 @@
         loop.addEventListener('click', loopvideo);
         document.addEventListener('keyup', keypressed);
         document.addEventListener('keydown', keypressedforlong);
+        if(document.activeElement.searchbar === "INPUT"){
+            console.log("it worked");
+        }
