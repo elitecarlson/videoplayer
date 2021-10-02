@@ -1,16 +1,18 @@
 :root {
   --visiblity: none;
   --zindex: -1;
+  --bgcolor: none;
+  --borderstyle: dotted;
 }
 .popup {
   position: absolute;
-  width: 100%;
+  width: auto;
   height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: none;
+  background-color: var(--bgcolor);
   z-index: var(--zindex);
   display: flex;
   align-items: center;
@@ -29,13 +31,13 @@
 .droparea {
   background-color: none;
   border-color: #00a2e8;
-  width: 300px;
+  width: 330px;
   height: 140px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-style: dashed;
+  border-style: var(--borderstyle);
 }
 .uploadfile {
   border: none;
@@ -47,27 +49,26 @@
   padding-left: 60px;
   padding-right: 60px;
   margin-bottom: 10px;
+  margin-top: 6px;
 }
 input[type="file"] {
   display: none;
 }
 .browsefile {
   color: #00a2e8;
-  background-color: white;
-  height: auto;
-  width: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  background-color: none;
+  font-family: sans-serif;
+}
+.browsefile:hover {
+  cursor: pointer;
 }
 .vidtitle {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: black;
+  border-bottom-color: #00a2e8;
   border-width: 1px;
-  width: 300px;
+  width: 330px;
   height: 40px;
   font-size: 19px;
   margin-bottom: 25px;
@@ -84,4 +85,16 @@ input[type="file"] {
 }
 .cancel:hover {
   cursor: pointer;
+}
+.uploadimg {
+  background-image: url(../icons/upload.png);
+  height: 64px;
+  width: 64px;
+  float: right;
+}
+.successimg {
+  background-image: url(../icons/success.png);
+  height: 64px;
+  width: 64px;
+  float: right;
 }
