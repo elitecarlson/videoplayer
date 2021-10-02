@@ -14,6 +14,7 @@
         const progressbar = document.querySelector('.progressbar');
         const loop = document.querySelector('.loop');
         const searchbar = document.querySelector('.search');
+        const vidtitle = document.querySelector('.vidtitle');
 
 
         function play_pause(){
@@ -138,7 +139,7 @@
         
 
         function keypressed(){
-            if (searchbar !== document.activeElement) {
+            if (searchbar&&vidtitle !== document.activeElement) {
             if (event.code === 'Space') {
                 play_pause();
             } else if (event.code === 'KeyM') {

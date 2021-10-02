@@ -15,20 +15,73 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .addvideo {
   padding: 10px;
   background-color: white;
   display: var(--visiblity);
   position: relative;
-  z-index: 2;
+  border-radius: 20px;
+  z-index: 290;
+}
+.droparea {
+  background-color: none;
+  border-color: #00a2e8;
+  width: 300px;
+  height: 140px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+}
+.uploadfile {
+  border: none;
+  background-color: #00a2e8;
+  color: white;
+  border-radius: 5px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 10px;
+}
+input[type="file"] {
+  display: none;
+}
+.browsefile {
+  color: #00a2e8;
+  background-color: white;
+  height: auto;
+  width: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .vidtitle {
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom-color: black;
+  border-width: 1px;
+  width: 300px;
+  height: 40px;
+  font-size: 19px;
+  margin-bottom: 25px;
 }
 .vidtitle:focus {
   outline: none;
+}
+.cancel {
+  background-image: url(../icons/close.png);
+  height: 24px;
+  width: 24px;
+  margin-right: 4px;
+  float: right;
+}
+.cancel:hover {
+  cursor: pointer;
 }

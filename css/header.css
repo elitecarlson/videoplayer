@@ -49,8 +49,10 @@
   padding-left: 15px;
 }
 .upload {
-  height: 38px;
-  width: 120px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 38px;
+  padding-right: 38px;
   border-radius: 100px;
   margin-left: 18%;
   border: none;
