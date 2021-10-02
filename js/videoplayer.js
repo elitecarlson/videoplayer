@@ -137,8 +137,8 @@
             }
         }
         
-
         function keypressed(){
+            if (searchbar !== document.activeElement && vidtitle !== document.activeElement) {
             if (event.code === 'Space') {
                 play_pause();
             } else if (event.code === 'KeyM') {
@@ -147,9 +147,10 @@
                 pip();
             } else if(event.code === 'KeyL') {
                 loopvideo();
-            }                
+            }
+            }               
         }
-        console.log("69");
+
         function keypressedforlong(){
             if (event.code === "ArrowLeft") {
                 rewindvideo();
@@ -179,6 +180,3 @@
         loop.addEventListener('click', loopvideo);
         document.addEventListener('keyup', keypressed);
         document.addEventListener('keydown', keypressedforlong);
-        if(document.activeElement.searchbar === "INPUT"){
-            console.log("it worked");
-        }
