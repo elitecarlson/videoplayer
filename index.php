@@ -54,7 +54,7 @@
                         <div class="loop"></div>
                         <div class="pip"></div>
                         <!--<div class="cast"></div>-->
-                        <!--<div class="fullscreen"></div>-- too much a pain for a feature i'll probably never use-->
+                        <div class="fullscreen"></div><!-- too much a pain for a feature i'll probably never use-->
                     </div>
                 </div>
             </div>
@@ -92,9 +92,8 @@
                 <div class="droparea">
                     <div class="uploadimg"></div>
                 </div>
-                <label class="browsefile">
-                    <input type="file">Browse File's
-                </label><br>
+                <input id="filetext" type="file" onchange="titlechange()" class="fileselect">
+                <label for="filetext" class="filetext">Browse File's</label><br>
                 <input type="submit" name="" id="" class="uploadfile" value="Upload File"><br>
             </form>
         </div>

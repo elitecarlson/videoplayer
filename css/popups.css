@@ -54,12 +54,11 @@
 input[type="file"] {
   display: none;
 }
-.browsefile {
+.filetext {
   color: #00a2e8;
-  background-color: none;
   font-family: sans-serif;
 }
-.browsefile:hover {
+.filetext:hover {
   cursor: pointer;
 }
 .vidtitle {

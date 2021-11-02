@@ -6,7 +6,7 @@ const cancelpopup = document.querySelector(".cancel");
 const dropvid = document.querySelector(".droparea");
 const selectfile = document.querySelector(".uploadimg");
 const videotitle = document.querySelector(".vidtitle");
-const browsefiles = document.querySelector(".browsefile");
+const selectedfiles = document.querySelector(".fileselect");
 
 
 function upload(){
@@ -52,10 +52,16 @@ function closepopup(){
     selectfile.className = "uploadimg";    
 }
 
+function titlechange() {
+    document.documentElement.style.setProperty('--borderstyle', 'solid'); 
+    selectfile.className = "successimg";
+    var vidname = selectedfiles.files[0].name;
+    var explodetext = vidname.split('.');
+    videotitle.value = explodetext[0];
+}
+
 addvideo.addEventListener('click', upload);
 cancelpopup.addEventListener('click', closepopup);
 dropvid.addEventListener('dragover', dragoverarea);
 dropvid.addEventListener('dragleave', dragleavearea);
 dropvid.addEventListener('drop', dropvideo);
-browsefiles.addEventListener('click', dropvideo);
-

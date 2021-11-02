@@ -5,7 +5,7 @@
         const sound = document.querySelector('.muted');
         const elapsedtime = document.querySelector('.currenttime');
         const video_duration = document.querySelector('.duration');
-        //const fullscreen = document.querySelector('.fullscreen');
+        const fullscreen = document.querySelector('.fullscreen');
         const pipbtn = document.querySelector('.pip');
         const rewind = document.querySelector('.rewind');
         const fastforward = document.querySelector('.fastforward');
@@ -55,7 +55,7 @@
             }
         }
 
-        /*function toggleFullscreen() {
+        function toggleFullscreen() {
               
             if (videocont.exitFullscreen) {
                 videocont.exitFullscreen();
@@ -73,7 +73,7 @@
                 videocont.msRequestFullscreen();
             }
 
-        }*/
+        }
 
         function pip(){
             if (video == document.pictureInPictureElement) {
@@ -146,6 +146,8 @@
             } else if (event.code === 'KeyI') {
                 pip();
             } else if(event.code === 'KeyL') {
+                loopvideo();
+            } else if(event.code === 'KeyF') {
                 loopvideo();
             }
             }               
