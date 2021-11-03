@@ -87,7 +87,7 @@
     <div class="popup">
         <div class="addvideo">
             <div class="cancel"></div>
-            <form action="php/upload_script.php" method="POST">
+            <form action="php/upload_script.php" method="POST" enctype="multipart/form-data">
                 <input type="text" class="vidtitle" placeholder="Title" value="" name="title"><br>
                 <div class="droparea">
                 <div class="uploadimg"></div>

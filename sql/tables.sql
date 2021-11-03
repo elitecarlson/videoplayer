@@ -1,5 +1,5 @@
-CREATE TABLE songname(
-    id INT PRIMARY KEY,
-    title VARCHAR(30),
-    artist VARCHAR(30)
+CREATE TABLE songs(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(30) UNIQUE,
+    video_key VARCHAR(30) UNIQUE
 );
