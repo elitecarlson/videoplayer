@@ -87,14 +87,14 @@
     <div class="popup">
         <div class="addvideo">
             <div class="cancel"></div>
-            <form action="">
-                <input type="text" class="vidtitle" placeholder="Title" value=""><br>
+            <form action="php/upload_script.php" method="POST">
+                <input type="text" class="vidtitle" placeholder="Title" value="" name="title"><br>
                 <div class="droparea">
-                    <div class="uploadimg"></div>
+                <div class="uploadimg"></div>
                 </div>
-                <input id="filetext" type="file" onchange="titlechange()" class="fileselect">
+                <input id="filetext" type="file" onchange="titlechange()" class="fileselect" name="fileupload">
                 <label for="filetext" class="filetext">Browse File's</label><br>
-                <input type="submit" name="" id="" class="uploadfile" value="Upload File"><br>
+                <input type="submit" name="submit" id="" class="uploadfile" value="Upload File"><br>
             </form>
         </div>
     </div>
