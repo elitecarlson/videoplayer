@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +8,11 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/Informatics.css">
     <link rel="stylesheet" href="css/popups.css">
+    <link rel="stylesheet" href="css/indexstyling.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <title>Document</title>
 </head>
-
 <body style="background-color: #f7f5f5;">
-    <!--************************************Header**************************************************************-->
     <div class="header">
         <img src="icons/youtube.png" class="logo">
         <form action="" class="searchbar">
@@ -23,14 +22,8 @@
             </button>
         </form>
         <button class="upload">Upload</button>
-    </div><br>
-    <!--************************************Header**************************************************************-->
-
-
-
-
-
-    <!--*************************************Player*************************************************************-->
+    </div>
+<div class="video_player_page">
     <div class="video-player">
         <!--<div class="popup"></div>-->
         <video src="media/mt.mp4" class="video"></video><br>
@@ -60,13 +53,6 @@
             </div>
         </div>
     </div>
-    <!--***************************************Player************************************************************-->
-
-
-
-
-
-    <!--****************************************Informatics******************************************************-->
     <div class="songnamediv">
         <p class="songname">Meghan Trainor - Me Too</p>
         <div>
@@ -77,13 +63,7 @@
             </div>
         </div>
     </div>
-    <!--****************************************Informatics******************************************************-->
-
-
-
-
-
-    <!--***************************************Popup upload******************************************************-->
+</div>
     <div class="popup">
         <div class="addvideo">
             <div class="cancel"></div>
@@ -98,11 +78,15 @@
             </form>
         </div>
     </div>
-    <!--****************************************Popup Upload******************************************************-->
+<div class="discover_page">
+    <div class="navbar"></div>
+    <div class="content_container">
+        <video src="media/mt.mp4"></video>
+    </div>
+</div>
+
     <script src="js/videoplayer.js"></script>
     <script src="js/popup.js"></script>
 </body>
-
 </html>
 <!--https://github.com/Elite-Carlson-->
-<!--https://turkish123.net/sen-cal-kapimi-episodee-6/?do=watch-->

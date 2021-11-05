@@ -1,0 +1,23 @@
+html,body{
+    height:100%;
+}
+body{
+    position: relative;
+}
+.discover_page{
+    height: 100%;
+}
+.navbar{
+    height: 90.2%;
+    width: 18%;
+    background-color: white;
+    float: left;
+    position: fixed;
+}
+.content_container{
+    position: relative;
+    float: right;
+    width: 64%;
+    padding-left: 18%;
+    background-color: none;
+}
