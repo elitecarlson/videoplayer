@@ -9,6 +9,7 @@
   height: 60px;
   display: flex;
   align-items: center;
+  position: fixed;
 }
 .logo {
   padding-left: 71px;
