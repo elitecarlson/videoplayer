@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/Informatics.css">
     <link rel="stylesheet" href="css/popups.css">
-    <link rel="stylesheet" href="css/indexstyling.css">
-    <link rel="stylesheet" href="css/navbar.css">
     <title>Document</title>
 </head>
 <body style="background-color: #f7f5f5;">
