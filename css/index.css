@@ -1,0 +1,40 @@
+.navbar{
+    height: 90.2%;
+    width: 18%;
+    background-color: white;
+    float: left;
+    position: fixed;
+    margin-top: 60px;
+}
+.contentcont{
+    background-color: none;
+    margin-top: 18px;
+    width: 82%;
+    float: right;
+}
+.playlists{
+    background-color: white;
+    width: 82%;
+    height: 52px;
+    margin-top: 60px;
+    float: right;
+}
+.dividerline{
+    width: 82%;
+    float: right;
+}
+.video {
+    background-image: url('media/mt.mp4');
+    height: 20px;
+    margin-left: 20px;
+}
+.vid{
+    height: 25%;
+    margin-left: 20px;
+}
+.songname{
+    margin-left: 20px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
